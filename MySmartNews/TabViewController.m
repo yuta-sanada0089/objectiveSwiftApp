@@ -7,7 +7,7 @@
 //
 
 #import "TabViewController.h"
-#import "ChildViewController.h"
+
 
 @implementation TabViewController
 
@@ -16,7 +16,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         _style = [TabControllerStyle styleWithName:@"Default"
-                                          tabStyle:MSSTabStyleText
+                                          tabStyle:MSSTabStyleImage
                                        sizingStyle:MSSTabSizingStyleSizeToFit
                                       numberOfTabs:6];
     }
@@ -73,10 +73,10 @@
 
 - (void)tabBarView:(MSSTabBarView *)tabBarView populateTab:(MSSTabBarCollectionViewCell *)tab atIndex:(NSInteger)index {
     NSString *imageName = [NSString stringWithFormat:@"tab%i.png", (int)(index + 1)];
-    NSString *pageName = [NSString stringWithFormat:@"Page %i", (int)(index + 1)];
+//    NSString *pageName = [NSString stringWithFormat:@"Page %i", (int)(index + 1)];
     
     tab.image = [UIImage imageNamed:imageName];
-    tab.title = pageName;
+//    tab.title = pageName;
 }
 
 @end
